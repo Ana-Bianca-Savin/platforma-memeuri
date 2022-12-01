@@ -1,13 +1,13 @@
 import Navbar from './Navbar';
+import Description from './Description';
 
 function App() {
-  const title = "MEME IT"
+
   return (
     <div className="App">
       <div className="container">
         <Navbar />
-        <h1>{ title }</h1>
-        test
+        <Description />
       </div>
     </div>
   );

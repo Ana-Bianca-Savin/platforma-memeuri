@@ -2,3 +2,30 @@
   color: #06114F;
   font-family: Merriweather, Martel, "PT Serif", Brawler;
 }
+
+.description-title {
+  color: #252F65;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
+}
+
+.description {
+  color: #252F65;
+  font-family: Roboto;
+}
+
+.btn-dark{
+  background-color: #6F3096;
+  border-color: #6F3096;
+  color: white;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+}
+
+.btn-dark:hover, .btn-dark:active, .btn-dark:focus, .open .dropdown-toggle.btn-dark {
+  background-color: #5b287a;
+}
+
+
+.box {
+  background-color: lightblue;
+}
