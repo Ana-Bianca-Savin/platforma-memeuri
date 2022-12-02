@@ -1,4 +1,4 @@
-import MEMEIT from './MEMEITTEXT.png'
+import MEMEIT from './Assets/MEMEITTEXT.png'
 
 const Navbar = () => {
     return ( 

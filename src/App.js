@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import Description from './Description';
 import UploadMEME from './UploadMEME'
+import MostViewedMEMES from './MostViewedMEMES';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
         <Navbar />
         <Description />
         <UploadMEME />
+        <MostViewedMEMES />
       </div>
     </div>
   );

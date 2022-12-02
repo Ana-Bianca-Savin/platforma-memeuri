@@ -1,4 +1,4 @@
-import SaltyMEME from './SaltyMEME.png'
+import SaltyMEME from './Assets/SaltyMEME.png'
 
 const Description = () => {
     return ( 
