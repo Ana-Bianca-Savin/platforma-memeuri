@@ -7,10 +7,14 @@ const Navbar = () => {
                 <img src={ MEMEIT } alt="MEMEIT?" class="navbar-brand"/>
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <button className="btn">Logare</button>
+                        <button className="btn navbarButtons">
+                                Logare
+                        </button>
                     </li>
                     <li className="nav-item">
-                        <button className="btn">Creare cont</button>
+                        <button className="btn navbarButtons">
+                                Creare cont
+                        </button>
                     </li>
                 </ul>
             </div>

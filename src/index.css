@@ -1,4 +1,4 @@
-.navbar {
+.navbarButtons {
   color: #06114F;
   font-family: Merriweather, Martel, "PT Serif", Brawler;
 }
@@ -13,7 +13,7 @@
   color: #252F65;
   font-family: Roboto;
 }
-
+/* nu e ok butonul*/
 .btn-dark{
   background-color: #6F3096;
   border-color: #6F3096;
@@ -25,7 +25,20 @@
   background-color: #5b287a;
 }
 
+.uploadBox {
+  background-color: #6F3096;
+}
 
+.formBox {
+  border-color: #06114F;
+}
+
+/*
+html, body {
+  padding: 0;
+  margin: 0;
+}
+*/
 .box {
   background-color: lightblue;
 }
