@@ -33,7 +33,16 @@
   border-color: #06114F;
 }
 
-/*
+.footerBox {
+  background-color: #06114F;
+}
+
+.copyright {
+  color: white;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+}
+
+/*   sfc
 html, body {
   padding: 0;
   margin: 0;
