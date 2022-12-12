@@ -1,0 +1,71 @@
+.navbarButtons {
+  color: #06114F;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+}
+
+.description-title {
+  color: #252F65;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
+}
+
+.forms-title {
+  color: #06114F;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
+}
+
+.modal-forms-title {
+  color: #252F65;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
+}
+
+.description {
+  color: #252F65;
+  font-family: Roboto;
+}
+
+.btnUpload{
+  background-color: #6F3096;
+  border-color: #6F3096;
+  color: white;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+}
+
+.btnUpload:hover, .btnUpload:active, .btnUpload:focus, .open .dropdown-toggle.btnUpload {
+  background-color: #5b287a;
+}
+
+.uploadBox {
+  background-color: #6F3096;
+}
+
+.formBox {
+  border-color: #06114F;
+}
+
+.footerBox {
+  background-color: #06114F;
+}
+
+.copyright {
+  color: white;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+}
+
+.modalText {
+  color: #6F3096;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
+}
+
+/*   sfc
+html, body {
+  padding: 0;
+  margin: 0;
+}
+*/
+.box {
+  background-color: lightblue;
+}
