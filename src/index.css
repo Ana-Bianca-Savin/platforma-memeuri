@@ -9,19 +9,31 @@
   font-weight: bold;
 }
 
+.forms-title {
+  color: #06114F;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
+}
+
+.modal-forms-title {
+  color: #252F65;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
+}
+
 .description {
   color: #252F65;
   font-family: Roboto;
 }
-/* nu e ok butonul*/
-.btn-dark{
+
+.btnUpload{
   background-color: #6F3096;
   border-color: #6F3096;
   color: white;
   font-family: Merriweather, Martel, "PT Serif", Brawler;
 }
 
-.btn-dark:hover, .btn-dark:active, .btn-dark:focus, .open .dropdown-toggle.btn-dark {
+.btnUpload:hover, .btnUpload:active, .btnUpload:focus, .open .dropdown-toggle.btnUpload {
   background-color: #5b287a;
 }
 
@@ -40,6 +52,12 @@
 .copyright {
   color: white;
   font-family: Merriweather, Martel, "PT Serif", Brawler;
+}
+
+.modalText {
+  color: #6F3096;
+  font-family: Merriweather, Martel, "PT Serif", Brawler;
+  font-weight: bold;
 }
 
 /*   sfc
