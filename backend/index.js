@@ -17,7 +17,10 @@ app.use(express.json())
 const MEMESRouter = require("./routes/MEMES")
 app.use("/MEMES", MEMESRouter)
 
+const UsersRouter = require("./routes/Users")
+app.use("/Users", UsersRouter)
 
+/*
 app.get("/home", function(req, res) { //
     res.send({
         name: "Ana",
@@ -28,6 +31,7 @@ app.get("/home", function(req, res) { //
 app.get("/", function(req, res) { //
     res.send("hello");
 });
+*/
 
 app.listen(3000, function() {
     console.log("Server started on port 3000");
