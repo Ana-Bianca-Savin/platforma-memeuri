@@ -4,21 +4,21 @@ Pentru realizarea siteului, am folosit:
 
 Frontend
 
-Pentru ca aveam aproape 0 experienta cand am inceput acest proiect, am folosit mai multe tutoriale. Unul dintre cele mai utile, care m-a invatat baza React-ului a fost https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&ab_channel=TheNetNinja care m-a ajutat sa fac setup-ul necesar. Apoi, pentru Bootstrap, am urmarit tutorialul https://www.youtube.com/watch?v=Jyvffr3aCp0&ab_channel=WebDevSimplified , care mi-a raspuns la majoritatea intrebarilor.
+Pentru ca aveam aproape 0 experienta cand am inceput acest proiect, am folosit mai multe tutoriale. Unul dintre cele mai utile, care m-a invatat baza React-ului a fost https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&ab_channel=TheNetNinja care m-a ajutat sa fac setup-ul necesar. Apoi, pentru Bootstrap, am urmarit tutorialul https://www.youtube.com/watch?v=Jyvffr3aCp0&ab_channel=WebDevSimplified, care mi-a raspuns la majoritatea intrebarilor, invatand despre grid sistem.
 
 Am creat folder-ul Assets, in care am pus toate png-urile, de care am avut nevoie.
 
-La primul task, am reusit sa realizez un navbar care deschide modalele de lodgare si de creare cont, cand utilizatorul apasa pe butoanele corespunzatoare.
+La primul task, am reusit sa realizez un navbar care deschide modalele de lodgare si de creare cont, cand utilizatorul apasa pe butoanele corespunzatoare. Aici, am descoperit cat de folositoare sunt clasele din Bootstrap.
 
-Am implementat in intregime task-ul al doilea, realizand landing page-ul. Aici, au aparut multe probleme cu spatierea, pe care am reusit sa le rezolv, invatand despre diferenta dintre padding si margins. Landing page-ul este separat in multe portiuni mai mici, pe care le-am implementat separat, pe rand: Description (partea ce contine descrierea site-ului), UploadMEME (partea ce contine chenarul mov si permite user-ului sa incarce un meme), MostViewedMEMES (partea la care trebuie sa aficam cele trei meme-uri) si footer-ul. In implementarea tuturor, m-am folosit de sistemul de grid pe care il pune la dispozitie Bootstrap-ul.
+Am implementat in intregime task-ul al doilea, realizand landing page-ul. Aici, au aparut multe probleme cu spatierea, pe care am reusit sa le rezolv, dupa ce mentorul mi-a explicat diferenta dintre padding si margins. Landing page-ul este format din multe portiuni mai mici, pe care le-am implementat separat, pe rand: Description (partea ce contine descrierea site-ului), UploadMEME (partea ce contine chenarul mov si permite user-ului sa incarce un meme), MostViewedMEMES (partea la care trebuie sa aficam cele trei meme-uri) si footer-ul. In implementarea tuturor, m-am folosit de sistemul de grid pe care il pune la dispozitie Bootstrap-ul. O proprietate foarte folositoare a Bootstrap-ului, care m-a ajutat este flexboxul.  
 
-Task-ul trei a reprezentat o adevarata provocare. Am incercat sa implementez totul asemenea casutei de upload a meme-urilor, care se afla pe landing page. Am ajut probleme cu centrarea, dar dupa ce am folosit proprietatile corecte ale claselor din Bootstrap, am reusit sa rezolv problema.
+Task-ul trei a reprezentat o adevarata provocare. Am incercat sa implementez totul asemenea casutei de upload a meme-urilor, care se afla pe landing page. Am avut probleme cu centrarea, dar dupa ce am folosit proprietatile corecte ale claselor din Bootstrap, am reusit sa rezolv problema.
 
-In cadrul, task-ului patru, am reusit sa implementez doar butonul de Upload care duce utilizatorul la sectiunea din pagina unde poate sa incarce meme-uri.
+In cadrul, task-ului patru, am reusit sa implementez doar butonul de Upload care duce utilizatorul la sectiunea din pagina unde poate sa incarce meme-uri, folosind un OnClick event.
 
 Task-ul cinci a fost unul din task-urile mai usoare de implementat, odata ce am inteles cum sa folosesc liniile si coloanele din Bootstrap, footer-ul reprezentand o sectiune a landing page-ului.
 
-Pentr task-ul sase, am incercat sa fac site-ul sa fie cat mai responsive la fiecare pas. In acest sens, am folosit clasele din Bootstrap care, de multe ori, se ocupa automat de responsiveness.
+Pentru task-ul sase, am incercat sa fac site-ul sa fie cat mai responsive la fiecare pas. In acest sens, am folosit clasele din Bootstrap care, de multe ori, se ocupa automat de responsiveness. De asemenea, am adaugat margini si padding in mai multe locuri pentru a face site-ul sa fie cat mai responsive.
 
 
 
