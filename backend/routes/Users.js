@@ -5,6 +5,7 @@ const router = express.Router()
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const User = require("../models/User")
+const { validateRegister } = require("../models/UserValidator")
 
 router.get("/", async (req, res) => {  // TEST
         const users = await User.find()
@@ -12,6 +13,30 @@ router.get("/", async (req, res) => {  // TEST
 })
 
 router.post("/register", async (req, res) => {
+    try {
+        const { error, value } = validateRegister(req.body)
+
+        if(error) {
+            return res.status(400).send(error.message)
+        } else {
+            const salt = await bcrypt.genSalt()
+            const hashedPassword = await bcrypt.hash(req.body.password, salt)
+
+            const user = new User({
+                email: req.body.email,
+                username: req.body.username,
+                password: hashedPassword
+            })
+
+            const newUser = await user.save()
+            newUser.password = req.body.password
+            res.status(201).json(newUser)
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+
+    /*  ASA FACEAM INAINTE DE TASK-UL 4
     try {
         const salt = await bcrypt.genSalt()
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
@@ -31,17 +56,17 @@ router.post("/register", async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
-    
+    */
 })
 
 router.post("/login", async (req, res) => {
-    const user = await User.findOne({ username: req.body.username }) //(user => user.username == req.body.username)
+    const user = await User.findOne({ username: req.body.username })
     if (user == null)
-        return res.status(400).send("Cannot find user")    // eroarile de nu exista mail sau parola nu sunt date bine
+        return res.status(400).send("Cannot find user")
     try {
         if (await bcrypt.compare(req.body.password, user.password)) {
-            const accessToken = jwt.sign(user.username, "e1f3d34567fab5d71aaffecd619306ad5f7e1c6adcef173048ad58c6f9a16d7c")
-            res.status(200).json({ accessToken: accessToken })
+            const token = jwt.sign(user.username, process.env.ACCESS_TOKEN_SECRET)
+            res.status(200).json({ token: token })
         } else {
             res.status(400).send("Wrong password")
         } 

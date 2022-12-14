@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const MEME = require("../models/MEMES")
+const { validateRegister } = require("../models/MEMESValidator")
 
 // GET all memes
 router.get("/", async (req, res) => {
@@ -19,6 +20,23 @@ router.get("/:id", getMeme, (req, res) => {
 
 // POST a meme
 router.post("/", async (req, res) => {
+    try {
+        const { error, value} = validateRegister(req.body)
+
+        if(error) {
+            return res.status(400).send(error.message)
+        } else {
+            const meme = new MEME({
+                Description: req.body.Description
+            })
+            const newMeme = await meme.save()
+            res.status(201).json(newMeme)
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+
+    /* ASA FACEAM INAINTE DE TASK-UL 4
     const meme = new MEME({
         Description: req.body.Description
     })
@@ -28,12 +46,18 @@ router.post("/", async (req, res) => {
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
+    */
 })
 
 // PATCH for modifying a meme by id
 router.patch("/:id", getMeme, async (req, res) => {
-    if (req.body.Description != null)
+    const { error, value} = validateRegister(req.body)
+
+    if (error) {
+        return res.status(400).send(error.message)
+    } else {
         res.meme.Description = req.body.Description
+    }
     try {
         //await MEME.updateOne({ _id: req.params.id }, { Description: req.body.Description }) this also works
         const updatedMeme = await res.meme.save()
