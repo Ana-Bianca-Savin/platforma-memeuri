@@ -4,7 +4,7 @@ import CLOSE from './Assets/CloseModal.png'
 const Navbar = () => {
     return (
         <>
-        <div className="modal fade" id="modalLogare">
+        <div className="modal fade" data-backdrop="static" id="modalLogare">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">

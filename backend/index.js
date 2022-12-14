@@ -5,10 +5,10 @@ const app = express()
 const mongoose = require("mongoose");
 
 mongoose.set('strictQuery', false);
-mongoose.connect("mongodb://127.0.0.1:27017/Platforma-memeuri", (err) => {
+mongoose.connect(process.env.DATABASE_URL, (err) => {
     if (err) 
         console.log(err);
-}) // process.env.DATA_URL
+})
 const db = mongoose.connection
 db.once("open", () => console.log("Connected to database"))
 
@@ -19,19 +19,6 @@ app.use("/MEMES", MEMESRouter)
 
 const UsersRouter = require("./routes/Users")
 app.use("/Users", UsersRouter)
-
-/*
-app.get("/home", function(req, res) { //
-    res.send({
-        name: "Ana",
-        age: 24
-    });
-});
-
-app.get("/", function(req, res) { //
-    res.send("hello");
-});
-*/
 
 app.listen(3000, function() {
     console.log("Server started on port 3000");
