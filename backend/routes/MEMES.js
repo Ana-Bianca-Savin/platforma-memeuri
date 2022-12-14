@@ -1,7 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const MEME = require("../models/MEMES")
-const { validateRegister } = require("../models/MEMESValidator")
+const jwt = require("jsonwebtoken")
+const { validateMEMES } = require("../models/MEMESValidator")
 
 // GET all memes
 router.get("/", async (req, res) => {
@@ -21,13 +22,26 @@ router.get("/:id", getMeme, (req, res) => {
 // POST a meme
 router.post("/", async (req, res) => {
     try {
-        const { error, value} = validateRegister(req.body)
+        const authHeader = req.headers["authorization"]
+        const tokenAuth = authHeader && authHeader.split(" ")[1]
+        if (tokenAuth == null)
+            return res.status(401).json({ message: "The user should be logged in to create a meme"})
+
+        const { error, value} = validateMEMES(req.body)
 
         if(error) {
             return res.status(400).send(error.message)
         } else {
+            let decodedTokenOut
+            jwt.verify(tokenAuth, process.env.ACCESS_TOKEN_SECRET, (err, decodedToken) => {
+                if (err)
+                    return res.status(403).json({ message: "You can modify only your memes" })
+                decodedTokenOut = decodedToken
+            })
+
             const meme = new MEME({
-                Description: req.body.Description
+                Description: req.body.Description,
+                owner: decodedTokenOut
             })
             const newMeme = await meme.save()
             res.status(201).json(newMeme)
@@ -35,28 +49,30 @@ router.post("/", async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
-
-    /* ASA FACEAM INAINTE DE TASK-UL 4
-    const meme = new MEME({
-        Description: req.body.Description
-    })
-    try {
-        const newMeme = await meme.save()
-        res.status(201).json(newMeme)
-    } catch (err) {
-        res.status(400).json({ message: err.message })
-    }
-    */
 })
 
 // PATCH for modifying a meme by id
 router.patch("/:id", getMeme, async (req, res) => {
-    const { error, value} = validateRegister(req.body)
+    const authHeader = req.headers["authorization"]
+    const tokenAuth = authHeader && authHeader.split(" ")[1]
+        if (tokenAuth == null)
+            return res.status(401).json({ message: "The user should be logged in to create a meme"})
+
+    const { error, value} = validateMEMES(req.body)
 
     if (error) {
         return res.status(400).send(error.message)
     } else {
-        res.meme.Description = req.body.Description
+        let decodedTokenOut
+        jwt.verify(tokenAuth, process.env.ACCESS_TOKEN_SECRET, (err, decodedToken) => {
+            if (err)
+                return res.status(403).json({ message: "You can modify only your memes" })
+            decodedTokenOut = decodedToken
+        })
+        if (res.meme.owner == decodedTokenOut)
+            res.meme.Description = req.body.Description
+        else
+            return res.status(403).json({ message: "You can modify only your memes" })
     }
     try {
         //await MEME.updateOne({ _id: req.params.id }, { Description: req.body.Description }) this also works

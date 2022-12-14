@@ -11,4 +11,4 @@ const MEMESSchemaValidation = Joi.object({
     })
 })
 
-module.exports.validateRegister = validator(MEMESSchemaValidation)
+module.exports.validateMEMES = validator(MEMESSchemaValidation)
